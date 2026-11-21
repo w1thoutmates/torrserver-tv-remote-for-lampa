@@ -48,4 +48,3 @@ try {
     [void][Windows.Forms.MessageBox]::Show($_.Exception.Message,'Ошибка настройки')
     exit 1
 }
-

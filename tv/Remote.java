@@ -390,5 +390,3 @@ public class Remote extends Activity {
         });
     }
 }
-
-

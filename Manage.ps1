@@ -1,4 +1,4 @@
-param([ValidateSet('Install','Uninstall','Status')][string]$Action = 'Status')
+﻿param([ValidateSet('Install','Uninstall','Status')][string]$Action = 'Status')
 $ErrorActionPreference = 'Stop'
 $startup = [Environment]::GetFolderPath('Startup')
 $shell = New-Object -ComObject WScript.Shell
@@ -39,4 +39,3 @@ if ($Action -eq 'Status') {
     try { Invoke-RestMethod 'http://127.0.0.1:8091/status' -TimeoutSec 5 | ConvertTo-Json -Compress } catch { Write-Warning $_ }
     & (Join-Path $PSScriptRoot 'Firewall.ps1') Status
 }
-

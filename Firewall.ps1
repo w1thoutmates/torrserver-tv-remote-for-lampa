@@ -1,4 +1,4 @@
-param([ValidateSet('Install','Uninstall','Status')][string]$Action = 'Status')
+﻿param([ValidateSet('Install','Uninstall','Status')][string]$Action = 'Status')
 $ErrorActionPreference = 'Stop'
 if ($Action -eq 'Install') {
     $cfg = ([xml](Get-Content (Join-Path $PSScriptRoot 'network.xml') -Raw)).Network
@@ -26,4 +26,3 @@ foreach ($port in 8090,8091) {
         New-NetFirewallRule -Name $name -DisplayName $name -Direction Inbound -Action Allow -Profile Private -Protocol TCP -LocalAddress $cfg.Address -LocalPort $port -RemoteAddress $subnet -InterfaceAlias $cfg.Interface -Program (Join-Path $PSScriptRoot $exe) | Out-Null
     }
 }
-

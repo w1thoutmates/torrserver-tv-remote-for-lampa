@@ -1,4 +1,4 @@
-param([string]$Sdk=$env:ANDROID_HOME, [string]$KeyStore=$env:TORR_TV_KEYSTORE)
+﻿param([string]$Sdk=$env:ANDROID_HOME, [string]$KeyStore=$env:TORR_TV_KEYSTORE)
 $ErrorActionPreference='Stop'
 if (!$Sdk -or !$KeyStore -or !$env:TORR_TV_KEY_PASSWORD) {throw 'Set ANDROID_HOME, TORR_TV_KEYSTORE and TORR_TV_KEY_PASSWORD before building.'}
 $KeyStore=(Resolve-Path -LiteralPath $KeyStore).Path
@@ -22,4 +22,3 @@ try {
      Remove-Item -LiteralPath $resolved -Recurse -Force
  }
 }
-

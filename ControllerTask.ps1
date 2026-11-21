@@ -1,4 +1,4 @@
-param([ValidateSet('Install','Uninstall')][string]$Action,[string]$Account)
+﻿param([ValidateSet('Install','Uninstall')][string]$Action,[string]$Account)
 $ErrorActionPreference = 'Stop'
 $name = 'Public MatriX Controller'
 $task = Get-ScheduledTask -TaskName $name -ErrorAction SilentlyContinue
@@ -25,4 +25,3 @@ if ($task.State -ne 'Running') {
 }
 Start-Sleep -Seconds 2
 if ((Get-ScheduledTask -TaskName $name).State -ne 'Running') { throw 'Controller task did not start' }
-

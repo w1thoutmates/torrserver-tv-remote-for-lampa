@@ -1,4 +1,4 @@
-$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop'
 $compiler = Join-Path $env:WINDIR 'Microsoft.NET\Framework64\v4.0.30319\csc.exe'
 foreach ($name in 'Controller','Tray') {
     $sources = @((Join-Path $PSScriptRoot "$name.cs"), (Join-Path $PSScriptRoot 'NetworkConfig.cs'))
