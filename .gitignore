@@ -1,0 +1,16 @@
+*.log
+*.log.*
+*.db
+*.db-*
+network.xml
+settings.json
+config.yaml
+data/
+plugins/
+*.jks
+*.keystore
+*.p12
+*.idsig
+Controller.exe
+Tray.exe
+TorrServer*.exe
